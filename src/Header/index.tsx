@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Link, Switch, Route } from 'react-router-dom'
+import { Router, Link, Switch, Route, Redirect } from 'react-router-dom'
 import history from '../history'
 import style from './style.module.css'
 import Profile from '../Profile'
@@ -32,6 +32,7 @@ const Main = () => {
 					</div>
 				</header>
 				<Switch>
+				<Redirect exact from="/" to="/profile1" />
 					<Route exact path="/profile1" component={() => <Profile name="User1" image={urlImgUser1} />} />
 					<Route exact path="/profile2" component={() => <Profile name="User2" image={urlImgUser2} />} />
 					<Route exact path="/profile3" component={() => <Profile name="User3" image={urlImgUser3} />} />
